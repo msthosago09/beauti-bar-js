@@ -4115,3 +4115,31 @@ a, button, .item-overlay, .global-overlay, .pagination li .page-number, .scroll-
 @media (max-width: 47.94em) {
   .mb-sm--7pt6 {
     margin-bottom: 7.6rem; } }
+
+.fa-plus, .fa-plus:hover {
+  color: lightpink;
+  border-color: lightpink;
+  cursor: pointer;
+}
+
+.fa-check, .fa-check:hover {
+  color: #1e7e34;
+  border-color: #1e7e34;
+  cursor: pointer;
+}
+
+#click-select-info {
+  font-style: oblique;
+}
+
+.menu-selected{
+  background-color: lightpink;
+}
+
+.menu-not-selected{
+  background-color: white;
+}
+
+#menu-table{
+  cursor: pointer;
+}

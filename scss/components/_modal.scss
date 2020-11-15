@@ -27,19 +27,19 @@
 		@include breakpoint(medium){
 		    width: 741px;
 		    max-width: 741px;
-		    max-height: 602px;
+		    max-height: 620px;
 		    overflow-x: hidden;
 		}
 		@include breakpoint(small){
 		    width: auto;
 		    max-width: 80%;
-		    max-height: 600px;
+		    max-height: 660px;
 		}
 		@include breakpoint(xsmall){
-		    max-height: 480px;
+		    max-height: 520px;
 		}
 		@include breakpoint(xxsmall){
-		    max-height: 320px;
+		    max-height: 360px;
 		}
 	}	
 	.modal-content{
