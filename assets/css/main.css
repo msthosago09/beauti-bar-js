@@ -1307,10 +1307,10 @@ a, button, .item-overlay, .global-overlay, .pagination li .page-number, .scroll-
       .header-toolbar--minicart-btn .toolbar-btn span:hover {
         border-color: #ff5151; }
   .header-toolbar__btn {
-    font-size: 30px; }
+    font-size: 17px; }
     @media (max-width: 35.94em) {
       .header-toolbar__btn {
-        font-size: 25px; } }
+        font-size: 17px; } }
     .header-toolbar__btn.menu-btn {
       width: 32px;
       height: 32px;
@@ -4142,4 +4142,18 @@ a, button, .item-overlay, .global-overlay, .pagination li .page-number, .scroll-
 
 #menu-table{
   cursor: pointer;
+}
+
+.product-image {
+  cursor: pointer;
+}
+
+.ad-image {
+  width: 400px;
+  height: 328px;
+}
+
+.header-logo{
+  width: 172px;
+  height: 100px;
 }

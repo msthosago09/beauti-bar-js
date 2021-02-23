@@ -26,7 +26,7 @@ $(window).on('load', function () {
                 '                                                            <strong>'+tmpSalonName+'</strong>\n' +
                 '                                                        </div>\n' +
                 '                                                        <h3 class="product-title"><i class="fas fa-map-marker-alt"></i> ' + tmpAddress + '</h3>\n' +
-                '                                                        <div class="product-info-bottom">\n' +
+/*                '                                                        <div class="product-info-bottom">\n' +
                 '                                                            <div class="product-price-wrapper">\n' +
                 '                                                                <span class="money">$150</span>\n' +
                 '                                                            </div>\n' +
@@ -34,7 +34,7 @@ $(window).on('load', function () {
                 '                                                                <i class="la la-plus"></i>\n' +
                 '                                                                <span>Book</span>\n' +
                 '                                                            </a>\n' +
-                '                                                        </div>\n' +
+                '                                                        </div>\n' +*/
                 '                                                    </div>\n' +
                 '                                                </div>\n' +
                 '                                            </div>\n' +
@@ -42,6 +42,7 @@ $(window).on('load', function () {
         }
         ;
         getLocation();
+        $('.ft-preloader').removeClass("active");
         console.log(window.location.href);
     });
 });
@@ -59,8 +60,7 @@ function showPosition(position) {
     $('.ft-preloader').removeClass("active");
 }
 
-function selectSalon(id) {
-    console.log("selected index " + id);
-    selectedSalon = salonArray[id];
-    window.location.href = '../salon-details/salon.html?name='+selectedSalon.salonName+'&id='+selectedSalon.id;
+function selectSalon(index) {
+    console.log("selected index " + index);
+    window.location.href = '../salon-details/salon.html?name='+salonArray[index].salonName+'&id='+salonArray[index].id;
 }

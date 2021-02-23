@@ -1,4 +1,5 @@
 $(window).on('load', function () {
+    // $( "#datepicker" ).datepicker();
     state.window_width = $(window).width();
     if (state.window_width > 991) {
         state.stickyHeader();
@@ -72,9 +73,9 @@ function loadSalonTechnicians(id) {
     $.get("http://thebeautibar.com/assets/php/fetch-technicians-for-salon.php", data, function (data, status) {
         selectedSalonTechnicians = JSON.parse(data);
         var techSelect = document.getElementById("tech-select");
-        for (var i = 0; i <selectedSalonTechnicians.length; i++){
-            techSelect.innerHTML += '<option data-display="'+selectedSalonTechnicians[i].technicianName+'" value="'+selectedSalonTechnicians[i].id + '">'+selectedSalonTechnicians[i].technicianName+'' +
-                ' '+selectedSalonTechnicians[i].technicianNumber+' </option>\n';
+        for (var i = 0; i < selectedSalonTechnicians.length; i++) {
+            techSelect.innerHTML += '<option data-display="' + selectedSalonTechnicians[i].technicianName + '" value="' + selectedSalonTechnicians[i].id + '">' + selectedSalonTechnicians[i].technicianName + '' +
+                ' ' + selectedSalonTechnicians[i].technicianNumber + ' </option>\n';
         }
         $('.nice-select').niceSelect('update');
     });
@@ -86,7 +87,7 @@ function selectTime() {
 }
 
 function addToCart(index) {
-    var selectedRow = document.getElementById("outside-menu-table").rows[index+1];
+    var selectedRow = document.getElementById("outside-menu-table").rows[index + 1];
     if (selectedRow.classList.contains("menu-not-selected") == true) {
         currentOrder.push(selectedSalonMenu[index]);
         selectedRow.classList.replace("menu-not-selected", "menu-selected");
@@ -98,5 +99,6 @@ function addToCart(index) {
     }
 }
 
-$(function(){
-});
+/*function openDatepicker() {
+    $("#datepicker").removeClass("hidden");
+}*/
