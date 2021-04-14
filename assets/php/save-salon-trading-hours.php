@@ -10,20 +10,21 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$salonId = $_GET["salonId"];
-$openingTimesArray = $_GET["openingTimes"];
-$closingTimesArray = $_GET["closingTimes"];
-$workingDaysArray = $_GET["workingDays"];
-
+$salonId = $_POST["salonId"];
+$openingTimesArray = $_POST["openingTimes"];
+$closingTimesArray = $_POST["closingTimes"];
+$workingDaysArray = $_POST["workingDays"];
+echo "Straight from get " . $workingDaysArray;
+echo "SalonId " . $salonId;
 $openingTimesArray = json_decode(stripslashes($openingTimesArray));
 $closingTimesArray = json_decode(stripslashes($closingTimesArray));
 $workingDaysArray = json_decode(stripslashes($workingDaysArray));
 $arrlength = count($openingTimesArray);
 
 echo "Opening times " . $openingTimesArray[0] . "closing " . $closingTimesArray[0] . "day " . $workingDaysArray[0];
-print_r(array_values($openingTimesArray));
+echo "changed array " . print_r(array_values($openingTimesArray));
 
-$sql = "SELECT * FROM trading_hours WHERE salonId = '$salonId'";
+/*$sql = "SELECT * FROM trading_hours WHERE salonId = '$salonId'";
 $conn->query($sql);
 if ($conn->affected_rows > 0) {
     for ($x = 0; $x < $arrlength; $x++) {
@@ -35,7 +36,7 @@ if ($conn->affected_rows > 0) {
         $sql = "INSERT INTO trading_hours(salonId, day, openingTime, closingTime) VALUES('$salonId','$workingDaysArray[x]','$openingTimesArray[x]','$closingTimesArray[x]')";
         $conn->query($sql);
     }
-}
+}*/
 
 $conn->close();
 ?>

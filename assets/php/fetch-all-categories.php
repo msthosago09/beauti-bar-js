@@ -11,8 +11,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$salonId = $_GET['salonId'];
-$sql = "SELECT  C.id, C.categoryName FROM categories C LEFT JOIN salon_category SC ON SC.categoryId = C.id WHERE SC.id = '$salonId'";
+$sql = "SELECT * FROM categories";
 
 $result = $conn->query($sql);
 $counter = 0;

@@ -9,22 +9,6 @@ $(window).on('load', function () {
 
 });
 
-function loadSalonInformation() {
-    $.get("http://thebeautibar.com/assets/php/fetch-salons.php", function (data, status) {
-        salonArray = JSON.parse(data);
-        var salonHTMLRow = document.getElementById("salons-admin-list");
-
-        // JS to assign salon data to home page template
-        for (var i = 0; i < salonArray.length; i++) {
-            var tmpSalonName = salonArray[i].salonName;
-            var tmpSalonId = salonArray[i].id;
-            salonHTMLRow.innerHTML += '<td>' + tmpSalonName + '</td>\n' +
-                '<td><a href="#" class="btn btn-size-sm" onclick="selectSalonToEdit(' + i + ')">Edit</a></td>\n' +
-                '<td><a href="#" class="btn btn-size-sm" onclick="openConfirmDelete(' + i + ')">Delete</a></td>';
-        }
-    });
-}
-
 function loadTechnicians() {
 
 }
@@ -37,7 +21,6 @@ function loadSalonToEdit(id) {
     var data = {salonId: id};
     $.get("http://thebeautibar.com/assets/php/fetch-salon-details.php", data, function (data, status) {
         salonData = JSON.parse(data);
-        console.log("salonData " + salonData[0].salonName);
         document.getElementById("salonName_field").value = salonData[0].salonName;
         document.getElementById("orderNotes").value = salonData[0].salonDescription;
         document.getElementById("salonPhone_field").value = salonData[0].phoneNumber;
@@ -47,7 +30,6 @@ function loadSalonToEdit(id) {
 }
 
 function updateSalonDetails() {
-    console.log("start update salon");
     var salonName = document.getElementById("salonName_field").value;
     var salonDesc = document.getElementById("orderNotes").value;
     var salonPhone = document.getElementById("salonPhone_field").value;
@@ -103,7 +85,7 @@ function updateSalonDetails() {
     $.get("http://thebeautibar.com/assets/php/update-salon.php", data, function () {
         console.log("salonData updated");
         // $('.ft-preloader').removeClass("active");
-        $.get("http://thebeautibar.com/assets/php/save-salon-trading-hours.php", tradingHoursData, function () {
+        $.post("http://thebeautibar.com/assets/php/save-salon-trading-hours.php", tradingHoursData, function () {
             console.log("trading hours updated");
             // $('.ft-preloader').removeClass("active");
             // window.location.href = '../admin/admin.html';

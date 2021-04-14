@@ -1629,8 +1629,8 @@ a, button, .item-overlay, .global-overlay, .pagination li .page-number, .scroll-
 *****************************/
 /*-- 22.00 - Global Button --*/
 .btn {
-  color: #ffffff;
-  background-color: #ff5151;
+  color: black;
+  background-color: #FFC0CB;
   padding: 20px 40px; }
   @media (max-width: 74.9375em) {
     .btn {

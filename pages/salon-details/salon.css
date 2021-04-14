@@ -1,0 +1,20 @@
+#time-flex {
+	display: flex; /* or inline-flex */
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+
+.time-tile {
+	height: 80px;
+	width: 80px;
+	background: #FFC0CB;
+	cursor: pointer;
+}
+
+.block-selected {
+
+}
+
+.block-not-selected {
+
+}
