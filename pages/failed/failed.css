@@ -1,0 +1,21 @@
+.order-status{
+	color: #80304d;
+	cursor: context-menu !important;
+	text-align: center;
+}
+.order-status:hover{
+	color: #80304d;
+	cursor: context-menu !important;
+}
+
+@media (max-width: 576px) {
+	.order-status{
+		font-size: 100px;
+	}
+}
+
+@media (min-width: 576px) {
+	.order-status{
+		font-size: 200px;
+	}
+}

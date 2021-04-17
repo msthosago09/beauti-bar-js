@@ -10,11 +10,8 @@ $conn = new mysqli($servername, $username, $password, $dbname,$port);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-$salonId = $_GET['salonId'];
-$appointmentDate = $_GET['appDate'];
-$technicianId = $_GET['technicianId'];
 
-$sql = "SELECT startTime, slots FROM appointments where salonId = '$salonId' AND appointmentDate = '$appointmentDate' AND technicianId = '$technicianId'";
+$sql = 'SELECT AUTO_INCREMENT as autoIncrement FROM information_schema.TABLES WHERE TABLE_SCHEMA = "_beauty_bar_main_db" AND TABLE_NAME = "appointments"';
 
 $result = $conn->query($sql);
 $counter = 0;

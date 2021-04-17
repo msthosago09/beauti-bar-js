@@ -26,7 +26,7 @@ if ($result->num_rows > 0) {
     }
     echo json_encode($resultArray);
 } else {
-    echo "0 results";
+    echo "No results";
 }
 $conn->close();
 ?>

@@ -11,19 +11,19 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$salonId = $_GET["salonId"];
-$salonName = $conn->real_escape_string($_GET["salonName"]);
-$startTime = $_GET["startTime"];
-$endTime = $_GET["endTime"];
-$appointmentDate = $_GET["appointmentDate"];
-$appStatus = $_GET["appStatus"];
-$traceId = $_GET["traceId"];
-$userId = $_GET["userId"];
-$cost = $_GET["cost"];
-$orderItems = $_GET["orderItems"];
-$duration = $_GET["duration"];
-$slots = $_GET["slots"];
-$technicianId = $_GET['technicianId'];
+$salonId = $_POST["salonId"];
+$salonName = $conn->real_escape_string($_POST["salonName"]);
+$startTime = $_POST["startTime"];
+$endTime = $_POST["endTime"];
+$appointmentDate = $_POST["appointmentDate"];
+$appStatus = $_POST["appStatus"];
+$traceId = $_POST["traceId"];
+$userId = $_POST["userId"];
+$cost = $_POST["cost"];
+$orderItems = $_POST["orderItems"];
+$duration = $_POST["duration"];
+$slots = $_POST["slots"];
+$technicianId = $_POST['technicianId'];
 
 $sql = "INSERT INTO appointments (salonId,technicianId,startTime,salonName,endTime, appointmentDate,appStatus,traceId,userId,cost,orderItems,duration,slots)
 VALUES ('$salonId','$technicianId','$startTime','$salonName','$endTime','$appointmentDate','$appStatus','$traceId','$userId','$cost','$orderItems','$duration','$slots')";

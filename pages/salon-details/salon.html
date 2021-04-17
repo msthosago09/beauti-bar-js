@@ -22,14 +22,6 @@
     <link rel="stylesheet" href="../../assets/css/main.css">
 
 <!--    Datepicker start -->
-    <!-- Standalone -->
-    <link href="../../assets/js/vanillajs-datepicker/dist/css/datepicker.min.css" rel="stylesheet" />
-    <!-- For Bootstrap 4 -->
-    <link href="../../assets/js/vanillajs-datepicker/dist/css/datepicker-bs4.min.css" rel="stylesheet" />
-    <!-- For Bulma -->
-    <link href="../../assets/js/vanillajs-datepicker/dist/css/datepicker-bulma.min.css" rel="stylesheet" />
-    <!-- For Foundation -->
-    <link href="../../assets/js/vanillajs-datepicker/dist/css/datepicker-foundation.min.css" rel="stylesheet" />
     <link href="salon.css" rel="stylesheet" />
 
 
@@ -415,13 +407,16 @@
                         <div class="col-lg-6">
                             <div class="modal-box product-summary">
                                 <h3 class="product-title mb--20"><strong>Schedule</strong></h3>
+                                <div id="time-needed"></div>
+                                <br/>
                                 <div class="container" id="time-flex">
 
                                 </div>
                                 <br/>
+                                <br/>
                                 <div class="product-action d-flex flex-sm-row flex-column align-items-sm-center align-items-start mb--30">
                                     <button type="button" class="btn btn-size-sm btn-shape-square"
-                                            onclick="window.location.href='cart.html'">
+                                            onclick="createOrder()">
                                         Pay
                                     </button>
                                 </div>
@@ -437,11 +432,29 @@
     <!-- Global Overlay Start -->
     <div class="global-overlay"></div>
     <!-- Global Overlay End -->
+    <div class="offcanvas-menu-wrapper" id="offcanvasMenu">
+        <div class="offcanvas-menu-inner">
+            <a href="" class="btn-close">
+                <i class="la la-remove"></i>
+            </a>
+            <nav class="offcanvas-navigation">
+                <ul class="offcanvas-menu">
+                    <li class="active">
+                        <a href="../home/home.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="../browse-salon/salons.html">Browse Salons</a>
+                    </li>
+                    <li>
+                        <a href="../admin/admin.html">Admin Portal</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
 
     <!-- Global Overlay Start -->
-    <!--
-        <a class="scroll-to-top" href=""><i class="la la-angle-double-up"></i></a>
-    -->
+
     <!-- Global Overlay End -->
 
 </div>
@@ -455,9 +468,5 @@
 <script src="../../assets/js/main.js"></script>
 <script src="salon.js"></script>
 
-<!--Datepicker start-->
-<script src="../../assets/js/vanillajs-datepicker/dist/js/datepicker.min.js"></script>
-<script src="../../assets/js/vanillajs-datepicker/dist/js/locales/en-GB.js"></script>
-<!--Date picker end-->
 </body>
 </html>

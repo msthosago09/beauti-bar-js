@@ -1,6 +1,4 @@
 
-9
-	cart.html,a\1\a1abaaf26816aeb42381aea4d5281e0413a961b5
 C
 assets/js/vendor.js,8\5\8545ec89ba400611b19800a01a89a10032bfdbb4
 B
@@ -9,8 +7,6 @@ A
 assets/js/main.js,2\7\27535fc9a68fbb5975536329c4632c8cca0d3e2a
 D
 pages/home/home.html,e\f\ef4b6257acc1d701c79ba31cd338db09a031ad9b
-9
-	shop.html,1\8\18f050eab4c0f40a7e604cdf668d039888ae7c48
 M
 scss/components/_product.scss,e\6\e6749f49fca36ac429aa77b8cf03461107fae9ef
 I
@@ -47,8 +43,6 @@ R
 "assets/php/fetch-salon-details.php,7\4\740d44c4da533288b0782d7969b865b85d6b4e77
 K
 assets/php/fetch-salons.php,6\5\655a246a9a98d9b51345748d05f05ba8e08f2005
-F
-blog-left-sidebar.html,8\9\89a2add7768794da4a8f1459713310663aa28974
 P
  pages/salon-admin/salon-admin.js,e\b\eb334db8a672857449d2f4553f67488ef3ff198f
 E
@@ -79,8 +73,6 @@ U
 %assets/php/fetch-salon-categories.php,2\6\26df155d8d97510657eb31f842d812c3ba9e0817
 8
 404.html,1\2\12bf52c5b60772bbf201ffb05d6bb178c1bf9a28
-Q
-!product-details-gallery-left.html,1\0\10611478e605b4f5c960672d7c075ad0c6a6e59c
 >
 scss/main.scss,9\0\90de66ec70bf430961a72ce5d436a8193a0100e0
 L

@@ -22,7 +22,8 @@
 
     <!-- style css -->
     <link rel="stylesheet" href="../../assets/css/main.css">
-    <link rel="stylesheet" href="admin.css">
+    <link href="success.css" rel="stylesheet"/>
+
 </head>
 
 <body>
@@ -90,7 +91,7 @@
                                         <div class="header-toolbar">
                                             <div class="header-toolbar__item header-toolbar--minicart-btn">
                                                 <a href="#miniCart" class="header-toolbar__btn toolbar-btn">
-                                                    <!--                                                    &lt;!&ndash;<i class="fas fa-sign-in-alt"></i>&ndash;&gt; Sign In-->
+<!--                                                    &lt;!&ndash;<i class="fas fa-sign-in-alt"></i>&ndash;&gt; Sign In-->
                                                 </a>
                                             </div>
                                             <div class="header-toolbar__item d-block d-lg-none">
@@ -118,98 +119,19 @@
     </header>
     <!-- Header End -->
 
-    <!-- Breadcrumb area Start -->
-    <section class="page-title-area bg-image ptb--80">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <h1 class="page-title">Admin Portal</h1>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Breadcrumb area End -->
     <!--TODO: For admin portal, make sure its a different view for Dakalo and separate salon owners
         Also have separate permissions for salon owners and technicians. Owners can edit anyones schedule and the salon object, technicians only their own schedule and view orders
     -->
     <!-- Main Content Wrapper Start -->
-    <div class="main-content-wrapper">
-        <div class="page-content-inner ptb--80 ptb-md--60 pb-sm--55">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="user-dashboard-tab flex-column flex-md-row">
-                            <div class="user-dashboard-tab__head nav flex-md-column" role="tablist"
-                                 aria-orientation="vertical">
-                                <a class="nav-link active" data-toggle="pill" role="tab" href="#orders"
-                                   aria-controls="orders" aria-selected="true">Orders</a>
-                                <a class="nav-link" data-toggle="pill" role="tab" href="#technicians-tab"
-                                   aria-controls="technicians-tab" aria-selected="true">Technicians</a>
-                                <a class="nav-link" data-toggle="pill" role="tab" href="#salons" aria-controls="salons"
-                                   aria-selected="true">Salons</a>
-                            </div>
-                            <div class="user-dashboard-tab__content tab-content">
-                                <div class="tab-pane fade" id="salons">
-                                    <div class="table-content table-responsive">
-                                        <table class="table text-center">
-                                            <thead>
-                                            <tr>
-                                                <th></th>
-                                                <th></th>
-                                                <th></th>
-                                            </tr>
-                                            </thead>
-                                            <tbody id="salons-admin-list">
-                                            <p id="no-salons-text">No salons</p>
-                                            </tbody>
-                                            <tbody>
-                                            <p><a href="../add-salon/add-salon.html" class="btn btn-size-sm" id="add-salon-btn"><i class="fas fa-plus"></i></a></p>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade show active" id="orders">
-                                    <div class="table-content table-responsive">
-                                        <table class="table text-center">
-                                            <thead>
-                                            <tr>
-                                                <th>Order</th>
-                                                <th class="wide-column">Date</th>
-                                                <th></th>
-                                            </tr>
-                                            </thead>
-                                            <tbody id="admin-order-table">
-                                            <tr>
-                                                <td>1</td>
-                                                <td>September 19, 2021</td>
-                                                <td><a href="#" class="btn btn-size-sm">View</a></td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="technicians-tab">
-                                    <div class="table-content table-responsive">
-                                        <table class="table text-center">
-                                            <thead>
-                                            <tr>
-                                                <th></th>
-                                                <th></th>
-                                                <th></th>
-                                            </tr>
-                                            </thead>
-                                            <tbody id="technicians-admin-list">
-                                            <p id="no-techs-text">No technicians</p>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="text-center">
+        <h1>Payment success</h1>
+        <i class="fas fa-check order-status"></i>
+        <br/>
+        <br/>
+        <button type="button" class="btn btn-size-sm btn-shape-square"
+                onclick="window.location.href='./../home/home.html'">
+            Home
+        </button>
     </div>
     <!-- Main Content Wrapper Start -->
 
@@ -234,7 +156,6 @@
             </nav>
         </div>
     </div>
-
     <!-- OffCanvas Menu End -->
 
     <!-- Global Overlay Start -->
@@ -252,7 +173,7 @@
 
 <!-- Main JS -->
 <script src="../../assets/js/main.js"></script>
-<script src="admin.js"></script>
+<script src="success.js"></script>
 
 </body>
 

@@ -1,0 +1,12 @@
+#time-flex-2 {
+    display: flex; /* or inline-flex */
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.admin-time-tile {
+    height: 80px;
+    width: 80px;
+    background: #FFC0CB;
+    cursor: pointer;
+}

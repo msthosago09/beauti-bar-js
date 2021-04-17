@@ -1,7 +1,7 @@
 #time-flex {
-	display: flex; /* or inline-flex */
+	display: inline-flex;
 	flex-wrap: wrap;
-	justify-content: space-evenly;
+	overflow: scroll
 }
 
 .time-tile {
@@ -11,10 +11,8 @@
 	cursor: pointer;
 }
 
-.block-selected {
-
-}
-
-.block-not-selected {
-
+.slot-booked {
+    background: #5d5d5d;
+	color: white;
+    cursor: not-allowed;
 }
