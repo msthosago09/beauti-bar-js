@@ -19,7 +19,7 @@ function loadOrders() {
 
 function loadSalonToEdit(id) {
     var data = {salonId: id};
-    $.get("http://thebeautibar.com/assets/php/fetch-salon-details.php", data, function (data, status) {
+    $.get("../../assets/php/fetch-salon-details.php", data, function (data, status) {
         salonData = JSON.parse(data);
         document.getElementById("salonName_field").value = salonData[0].salonName;
         document.getElementById("orderNotes").value = salonData[0].salonDescription;
@@ -82,10 +82,10 @@ function updateSalonDetails() {
     };
 
     $('.ft-preloader').addClass("active");
-    $.get("http://thebeautibar.com/assets/php/update-salon.php", data, function () {
+    $.get("../../assets/php/update-salon.php", data, function () {
         console.log("salonData updated");
         // $('.ft-preloader').removeClass("active");
-        $.post("http://thebeautibar.com/assets/php/save-salon-trading-hours.php", tradingHoursData, function () {
+        $.post("../../assets/php/save-salon-trading-hours.php", tradingHoursData, function () {
             console.log("trading hours updated");
             // $('.ft-preloader').removeClass("active");
             // window.location.href = '../admin/admin.html';

@@ -3,7 +3,7 @@ $(window).on('load', function () {
     if (state.window_width > 991) {
         state.stickyHeader();
     }
-    $.get("http://thebeautibar.com/assets/php/fetch-salons.php", function (data, status) {
+    $.get("../../assets/php/fetch-salons.php", function (data, status) {
         console.log("data fetched");
         var salonData = JSON.parse(data);
         var salonHTMLrow = document.getElementById("browse-salon-row");

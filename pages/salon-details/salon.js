@@ -27,7 +27,7 @@ var tmpSelectedSalon;
 
 function loadSalonDetails(id) {
     var data = {salonId: id};
-    $.get("http://thebeautibar.com/assets/php/fetch-salon-details.php", data, function (data, status) {
+    $.get("../../assets/php/fetch-salon-details.php", data, function (data, status) {
         var salonData = JSON.parse(data);
         tmpSelectedSalon = salonData[0];
         var timeBlock = document.getElementById("time-details");
@@ -44,7 +44,7 @@ function loadSalonDetails(id) {
 
 function loadSalonCategories(id) {
     var data = {salonId: id};
-    $.get("http://thebeautibar.com/assets/php/fetch-salon-categories.php", data, function (data, status) {
+    $.get("../../assets/php/fetch-salon-categories.php", data, function (data, status) {
         var salonData = JSON.parse(data);
         var categoryRow = document.getElementById("category-list");
         // JS to assign category data to salon page template
@@ -69,6 +69,7 @@ var selectedDate = new Date();
 var bookedTimes = [];
 var bookedSlots = [];
 var searchDate;
+
 function loadSalonAppointments(sId) {
     searchDate = selectedDate.getFullYear() + "-" + (selectedDate.getMonth() + 1) + "-" + selectedDate.getDate();
     var data = {
@@ -76,7 +77,7 @@ function loadSalonAppointments(sId) {
         salonId: sId,
         technicianId: selectedTech
     };
-    $.get("http://thebeautibar.com/assets/php/fetch-appointments-for-salon.php", data, function (data) {
+    $.get("../../assets/php/fetch-appointments-for-salon.php", data, function (data) {
         if (data == "No results") {
             loadUnavailableAppointments(sId);
             return;
@@ -107,7 +108,7 @@ function loadUnavailableAppointments(sId) {
         salonId: sId,
         technicianId: selectedTech
     };
-    $.get("http://thebeautibar.com/assets/php/fetch-unavailable-slots.php", data, function (data) {
+    $.get("../../assets/php/fetch-unavailable-slots.php", data, function (data) {
         if (data == "No results") {
             document.getElementById("time-needed").innerHTML = "<p>Time needed: " + totalTime + " min";
             $('.ft-preloader').removeClass("active");
@@ -126,13 +127,14 @@ function loadUnavailableAppointments(sId) {
                 }
             }
         }
+        appointmentsFetchedBefore = true;
         $('.ft-preloader').removeClass("active");
     });
 }
 
 function loadSalonImages(id) {
     var data = {salonId: id};
-    $.get("http://thebeautibar.com/assets/php/fetch-salon-images.php", data, function (data, status) {
+    $.get("../../assets/php/fetch-salon-images.php", data, function (data, status) {
         var salonData = JSON.parse(data);
         var salonHTMLrow = document.getElementById("product-list-row");
         // JS to assign salon data to home page template
@@ -142,7 +144,7 @@ function loadSalonImages(id) {
 
 function loadSalonMenu(id) {
     var data = {salonId: id};
-    $.get("http://thebeautibar.com/assets/php/fetch-salon-menus.php", data, function (data, status) {
+    $.get("../../assets/php/fetch-salon-menus.php", data, function (data, status) {
         currentOrder = new Array();
         selectedSalonMenu = JSON.parse(data);
         var salonHTMLrow = document.getElementById("menu-table");
@@ -160,7 +162,7 @@ function loadSalonMenu(id) {
 
 function loadSalonTechnicians(id) {
     var data = {salonId: id};
-    $.get("http://thebeautibar.com/assets/php/fetch-technicians-for-salon.php", data, function (data, status) {
+    $.get("../../assets/php/fetch-technicians-for-salon.php", data, function (data, status) {
         selectedSalonTechnicians = JSON.parse(data);
         var techSelect = document.getElementById("tech-select");
         for (var i = 0; i < selectedSalonTechnicians.length; i++) {
@@ -172,7 +174,9 @@ function loadSalonTechnicians(id) {
     });
 
 }
+
 var timeSlots;
+
 function selectTime(index) {
     timeSlots = this.calculateSlots();
     var selectedBox = document.getElementById("time-tile-" + index);
@@ -214,7 +218,12 @@ var selectedTech;
 $("#tech-select").change(function () {
     var selectedBox = document.getElementById("tech-select");
     selectedTech = selectedBox.options[selectedBox.selectedIndex].value;
+    if (appointmentsFetchedBefore) {
+        selectedDate = new Date(document.getElementById("date-selector").value);
+        loadSalonAppointments(salonId);
+    }
 });
+var appointmentsFetchedBefore = false;
 
 $("#date-selector").change(function () {
     $('.ft-preloader').addClass("active");
@@ -227,6 +236,7 @@ function calculateSlots() {
 }
 
 var cost = 0;
+
 function addToCart(index) {
     var selectedRow = document.getElementById("outside-menu-table").rows[index + 1];
     if (selectedRow.classList.contains("menu-not-selected") == true) {
@@ -251,14 +261,14 @@ function buildAppointment() {
     var traceId = 0;
     // generateOrderId();
     var appointment = {};
-    $.get("http://thebeautibar.com/assets/php/get-order-id.php", function (data,status) {
+    $.get("../../assets/php/get-order-id.php", function (data, status) {
         var orderIdData = JSON.parse(data);
         traceId = parseInt(orderIdData[0].autoIncrement);
 
         cost = 0;
         var treatmentString = "";
         var totalLength = 0;
-        for(var i =0; i < currentOrder.length; i ++) {
+        for (var i = 0; i < currentOrder.length; i++) {
             cost += parseInt(currentOrder[i].price);
             treatmentString += currentOrder[i].productDescription;
             totalLength += parseInt(currentOrder[i].treatmentLength);
@@ -280,75 +290,113 @@ function buildAppointment() {
         appointment.duration = totalLength;
         appointment.appointmentDate = selectedDate.getFullYear() + "-" + (selectedDate.getMonth() + 1) + "-" + selectedDate.getDate();
         appointment.userId = 'DefaultTestUser';
-        $.post("../../assets/php/add-appointment.php", appointment, function (data2,status2) {
+        $.post("../../assets/php/add-appointment.php", appointment, function (data2, status2) {
             postToPayfast(appointment);
         });
     });
 }
 
 function postToPayfast(appt) {
+
+    var payfastPayload = {
+        merchant_id: 10017174,
+        merchant_key: "675g0eirbfi4l",
+        return_url: 'http://thebeautibar.com/pages/success/success.html?id=' + appt.traceId,
+        cancel_url: 'http://thebeautibar.com/pages/failed/failed.html?id=' + appt.traceId,
+        notify_url: 'http://thebeautibar.com/assets/payfast-notify.php',
+        name_first: "Scott",
+        name_last: "Test",
+        email_address: "scott@gmail.com",
+        m_payment_id: appt.traceId,
+        amount: (cost).toString(),
+        item_name: appt.orderItems
+    }
+
+    // var signature = generatePayfastSignature(payfastPayload);
+
+    console.log("generatedSIgnature " + signature);
     var form = document.createElement('form');
     form.method = 'POST';
     form.action = "https://sandbox.payfast.co.za/eng/process";
 
     var hiddenField = document.createElement('input');
     hiddenField.name = 'merchant_id';
-    hiddenField.value = payfastPayload.merchantId.toString();
+    hiddenField.value = payfastPayload.merchant_id.toString();
     form.appendChild(hiddenField);
 
     var hiddenField2 = document.createElement('input');
     hiddenField2.name = 'merchant_key';
-    hiddenField2.value = payfastPayload.merchantKey;
+    hiddenField2.value = payfastPayload.merchant_key;
     form.appendChild(hiddenField2);
+
+    var hiddenField10 = document.createElement('input');
+    hiddenField10.name = 'return_url';
+    hiddenField10.value = payfastPayload.return_url
+    form.appendChild(hiddenField10);
+
+    var hiddenField9 = document.createElement('input');
+    hiddenField9.name = 'cancel_url';
+    hiddenField9.value = payfastPayload.cancel_url;
+    form.appendChild(hiddenField9);
+
+    var hiddenField12 = document.createElement('input');
+    hiddenField12.name = 'notify_url';
+    hiddenField12.value = payfastPayload.notify_url
+    form.appendChild(hiddenField12);
 
     var hiddenField3 = document.createElement('input');
     hiddenField3.name = 'name_first';
-    hiddenField3.value = "TestName";
+    hiddenField3.value = payfastPayload.name_first;
     form.appendChild(hiddenField3);
 
     var hiddenField4 = document.createElement('input');
     hiddenField4.name = 'name_last';
-    hiddenField4.value = "TestSurname"
+    hiddenField4.value = payfastPayload.name_last;
     form.appendChild(hiddenField4);
 
     var hiddenField5 = document.createElement('input');
     hiddenField5.name = 'email_address';
-    hiddenField5.value = "u13062060@tuks.co.za"
+    hiddenField5.value = payfastPayload.email_address;
     form.appendChild(hiddenField5);
 
     var hiddenField6 = document.createElement('input');
     hiddenField6.name = 'm_payment_id';
-    hiddenField6.value = payfastPayload.mPaymentId;
+    hiddenField6.value = payfastPayload.m_payment_id;
     form.appendChild(hiddenField6);
 
     var hiddenField7 = document.createElement('input');
     hiddenField7.name = 'amount';
-    hiddenField7.value = (cost).toString();
+    hiddenField7.value = payfastPayload.amount;
     form.appendChild(hiddenField7);
 
     var hiddenField8 = document.createElement('input');
     hiddenField8.name = 'item_name';
-    hiddenField8.value = appt.orderItems;
+    hiddenField8.value = payfastPayload.item_name;
     form.appendChild(hiddenField8);
 
-    var hiddenField9 = document.createElement('input');
-    hiddenField9.name = 'cancel_url';
-    hiddenField9.value = 'http://thebeautibar.com/pages/failed/failed.html?id='+appt.traceId;
-    form.appendChild(hiddenField9);
-
-    var hiddenField10 = document.createElement('input');
-    hiddenField10.name = 'return_url';
-    hiddenField10.value = 'http://thebeautibar.com/pages/success/success.html?id='+appt.traceId;
-    form.appendChild(hiddenField10);
+    /*    var hiddenField11 = document.createElement('input');
+        hiddenField11.name = 'signature';
+        hiddenField11.value = signature;
+        form.appendChild(hiddenField10);*/
 
     document.body.appendChild(form);
     form.submit();
 }
-var payfastPayload =  {
-    merchantId: 10017174,
-    merchantKey:  "675g0eirbfi4l",
-    nameFirst:  "Scott",
-    nameLast: "Test",
-    emailAddress: "scott@gmail.com",
-    mPaymentId: "A124G"
+
+function generatePayfastSignature(payfastPayload) {
+    var payfastKeys = Object.keys(payfastPayload);
+    var payfastValues = Object.values(payfastPayload);
+    var signatureString = "";
+    for (var x = 0; x < payfastKeys.length; x++) {
+        signatureString += payfastKeys[x] + "=" + payfastValues[x] + "&";
+    }
+    var passphrase = "GET_FROM_DAKALO";
+    signatureString += "passphrase=" + passphrase;
+    var data = {
+        signatureString: signatureString
+    }
+    $.post("../../assets/php/generate-payfast-signature.php", data, function (data2) {
+        signatureString = data2;
+        return signatureString;
+    });
 }

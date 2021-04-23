@@ -1,21 +1,28 @@
 <!doctype html>
+<html class="no-js" lang="zxx">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Beauti Bar</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="google-signin-client_id"
+          content="329995864630-kosvhe9opem8oesuqookl9g71brn8jsi.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <!-- Favicons -->
-    <link rel="shortcut icon" href="../../assets/img/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="../../assets/img/icon.png">
+    <link rel="shortcut icon" href="../../assets/img/logo/6_JFo_icon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../../assets/img/logo/6.png">
 
     <!-- ************************* CSS Files ************************* -->
 
     <!-- Vendor CSS -->
     <link rel="stylesheet" href="../../assets/css/vendor.css">
+    <script src="https://kit.fontawesome.com/75c97e5e80.js" crossorigin="anonymous"></script>
 
     <!-- style css -->
     <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="add-salon.css">
 </head>
 
 <body>
@@ -43,7 +50,7 @@
                                 <div class="header__main-left">
                                     <div class="logo">
                                         <a href="../home/home.html" class="logo--normal">
-                                            <h1>Beauti Bar</h1>
+                                            <img class="header-logo" src="../../assets/img/logo/6.png" alt="Logo">
                                         </a>
                                     </div>
                                 </div>
@@ -56,22 +63,22 @@
                                                 </a>
                                             </li>
                                             <li class="mainmenu__item">
-                                                <a href="about-us.html" class="mainmenu__link">
+                                                <a href="#" class="mainmenu__link">
                                                     <span class="mm-text">About us</span>
                                                 </a>
                                             </li>
                                             <li class="mainmenu__item">
-                                                <a href="../../contact-us.html" class="mainmenu__link">
+                                                <a href="#" class="mainmenu__link">
                                                     <span class="mm-text">Contact Us</span>
                                                 </a>
                                             </li>
                                             <li class="mainmenu__item">
-                                                <a href="../../blog.html" class="mainmenu__link">
+                                                <a href="#" class="mainmenu__link">
                                                     <span class="mm-text">My Account</span>
                                                 </a>
                                             </li>
                                             <li class="mainmenu__item">
-                                                <a href="#" class="mainmenu__link">
+                                                <a href="../admin/admin.html" class="mainmenu__link">
                                                     <span class="mm-text">Admin Portal</span>
                                                 </a>
                                             </li>
@@ -83,7 +90,6 @@
                                         <div class="header-toolbar">
                                             <div class="header-toolbar__item header-toolbar--minicart-btn">
                                                 <a href="#miniCart" class="header-toolbar__btn toolbar-btn">
-                                                    <!--<i class="fas fa-sign-in-alt"></i>--> Sign In
                                                 </a>
                                             </div>
                                             <div class="header-toolbar__item d-block d-lg-none">
@@ -116,7 +122,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
-                    <h1 class="page-title">Edit Salon</h1>
+                    <h1 class="page-title">Add Salon</h1>
                 </div>
             </div>
         </div>
@@ -154,6 +160,18 @@
                         </div>
                         <div class="form-row mb--20">
                             <div class="form__group col-12">
+                                <label class="form__label">Menu <span
+                                        class="required">*</span></label>
+                                <br/>
+                                <button data-toggle="modal" data-target="#addMenuModal" type="button"
+                                        class="btn btn-size-sm btn-shape-square">
+                                    View
+                                </button>
+                                <br/>
+                            </div>
+                        </div>
+                        <div class="form-row mb--20">
+                            <div class="form__group col-12">
                                 <label for="salonPhone_field" class="form__label">Phone <span
                                         class="required">*</span></label>
                                 <input type="text" name="salonPhone_field" id="salonPhone_field" class="form__input">
@@ -165,6 +183,15 @@
                                         class="required">*</span></label>
                                 <input type="email" name="salonEmail_field" id="salonEmail_field" class="form__input">
                             </div>
+                        </div>
+                        <div class="form-rom mb--20">
+                            <label class="form__label">Technicians <span
+                                    class="required">*</span></label>
+                            <br/>
+                            <button data-toggle="modal" data-target="#addTechnicianModal" type="button"
+                                    class="btn btn-size-sm btn-shape-square">
+                                View
+                            </button>
                         </div>
                         <div class="form-row mb--20">
                             <p class="form__label">Trading Hours</p>
@@ -178,7 +205,7 @@
                                                 <label class="form__label checkbox-label" for="edit-day-checkbox-1">
                                                     <input type="checkbox" name="edit-day-checkbox"
                                                            id="edit-day-checkbox-1">
-                                                    <span style="padding-left:0.1em">Monday</span>
+                                                    <span style="padding-left:0.1em">Monday - Friday </span>
                                                 </label>
                                             </td>
                                             <td style="width: 60%">
@@ -256,7 +283,7 @@
                                                 <label class="form__label checkbox-label" for="edit-day-checkbox-2">
                                                     <input type="checkbox" name="edit-day-checkbox"
                                                            id="edit-day-checkbox-2">
-                                                    <span style="padding-left:0.1em">Tuesday</span>
+                                                    <span style="padding-left:0.1em">Saturday</span>
                                                 </label>
                                             </td>
                                             <td style="width: 60%">
@@ -334,7 +361,7 @@
                                                 <label class="form__label checkbox-label" for="edit-day-checkbox-3">
                                                     <input type="checkbox" name="edit-day-checkbox"
                                                            id="edit-day-checkbox-3">
-                                                    <span style="padding-left:0.1em">Wednesday</span>
+                                                    <span style="padding-left:0.1em">Sunday</span>
                                                 </label>
                                             </td>
                                             <td style="width: 60%">
@@ -407,318 +434,6 @@
                                                 </select>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td class="text-left" style="width: 40%">
-                                                <label class="form__label checkbox-label" for="edit-day-checkbox-4">
-                                                    <input type="checkbox" name="edit-day-checkbox"
-                                                           id="edit-day-checkbox-4">
-                                                    <span style="padding-left:0.1em">Thursday</span>
-                                                </label>
-                                            </td>
-                                            <td style="width: 60%">
-                                                <select id="edit-day-select-start-4" name="edit-day-select-start">
-                                                    <option value="06:00">06:00</option>
-                                                    <option value="06:30">06:30</option>
-                                                    <option value="07:00">07:00</option>
-                                                    <option value="07:30">07:30</option>
-                                                    <option value="08:00">08:00</option>
-                                                    <option value="08:30">08:30</option>
-                                                    <option value="09:00">09:00</option>
-                                                    <option value="09:30">09:30</option>
-                                                    <option value="10:00">10:00</option>
-                                                    <option value="10:30">10:30</option>
-                                                    <option value="11:00">11:00</option>
-                                                    <option value="11:30">11:30</option>
-                                                    <option value="12:00">12:00</option>
-                                                    <option value="12:30">12:30</option>
-                                                    <option value="13:00">13:00</option>
-                                                    <option value="13:30">13:30</option>
-                                                    <option value="14:00">14:00</option>
-                                                    <option value="14:30">14:30</option>
-                                                    <option value="15:00">15:00</option>
-                                                    <option value="15:30">15:30</option>
-                                                    <option value="16:00">16:00</option>
-                                                    <option value="16:30">16:30</option>
-                                                    <option value="17:00">17:00</option>
-                                                    <option value="17:30">17:30</option>
-                                                    <option value="18:00">18:00</option>
-                                                    <option value="18:30">18:30</option>
-                                                    <option value="19:00">19:00</option>
-                                                    <option value="19:30">19:30</option>
-                                                    <option value="20:00">20:00</option>
-                                                    <option value="20:30">20:30</option>
-                                                    <option value="21:00">21:00</option>
-                                                </select>
-                                                to
-                                                <select id="edit-day-select-end-4" name="edit-day-select-end">
-                                                    <option value="06:00">06:00</option>
-                                                    <option value="06:30">06:30</option>
-                                                    <option value="07:00">07:00</option>
-                                                    <option value="07:30">07:30</option>
-                                                    <option value="08:00">08:00</option>
-                                                    <option value="08:30">08:30</option>
-                                                    <option value="09:00">09:00</option>
-                                                    <option value="09:30">09:30</option>
-                                                    <option value="10:00">10:00</option>
-                                                    <option value="10:30">10:30</option>
-                                                    <option value="11:00">11:00</option>
-                                                    <option value="11:30">11:30</option>
-                                                    <option value="12:00">12:00</option>
-                                                    <option value="12:30">12:30</option>
-                                                    <option value="13:00">13:00</option>
-                                                    <option value="13:30">13:30</option>
-                                                    <option value="14:00">14:00</option>
-                                                    <option value="14:30">14:30</option>
-                                                    <option value="15:00">15:00</option>
-                                                    <option value="15:30">15:30</option>
-                                                    <option value="16:00">16:00</option>
-                                                    <option value="16:30">16:30</option>
-                                                    <option value="17:00">17:00</option>
-                                                    <option value="17:30">17:30</option>
-                                                    <option value="18:00">18:00</option>
-                                                    <option value="18:30">18:30</option>
-                                                    <option value="19:00">19:00</option>
-                                                    <option value="19:30">19:30</option>
-                                                    <option value="20:00">20:00</option>
-                                                    <option value="20:30">20:30</option>
-                                                    <option value="21:00">21:00</option>
-                                                </select>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-left" style="width: 40%">
-                                                <label class="form__label checkbox-label" for="edit-day-checkbox-5">
-                                                    <input type="checkbox" name="edit-day-checkbox"
-                                                           id="edit-day-checkbox-5">
-                                                    <span style="padding-left:0.1em">Friday</span>
-                                                </label>
-                                            </td>
-                                            <td style="width: 60%">
-                                                <select id="edit-day-select-start-5" name="edit-day-select-start">
-                                                    <option value="06:00">06:00</option>
-                                                    <option value="06:30">06:30</option>
-                                                    <option value="07:00">07:00</option>
-                                                    <option value="07:30">07:30</option>
-                                                    <option value="08:00">08:00</option>
-                                                    <option value="08:30">08:30</option>
-                                                    <option value="09:00">09:00</option>
-                                                    <option value="09:30">09:30</option>
-                                                    <option value="10:00">10:00</option>
-                                                    <option value="10:30">10:30</option>
-                                                    <option value="11:00">11:00</option>
-                                                    <option value="11:30">11:30</option>
-                                                    <option value="12:00">12:00</option>
-                                                    <option value="12:30">12:30</option>
-                                                    <option value="13:00">13:00</option>
-                                                    <option value="13:30">13:30</option>
-                                                    <option value="14:00">14:00</option>
-                                                    <option value="14:30">14:30</option>
-                                                    <option value="15:00">15:00</option>
-                                                    <option value="15:30">15:30</option>
-                                                    <option value="16:00">16:00</option>
-                                                    <option value="16:30">16:30</option>
-                                                    <option value="17:00">17:00</option>
-                                                    <option value="17:30">17:30</option>
-                                                    <option value="18:00">18:00</option>
-                                                    <option value="18:30">18:30</option>
-                                                    <option value="19:00">19:00</option>
-                                                    <option value="19:30">19:30</option>
-                                                    <option value="20:00">20:00</option>
-                                                    <option value="20:30">20:30</option>
-                                                    <option value="21:00">21:00</option>
-                                                </select>
-                                                to
-                                                <select id="edit-day-select-end-5" name="edit-day-select-end">
-                                                    <option value="06:00">06:00</option>
-                                                    <option value="06:30">06:30</option>
-                                                    <option value="07:00">07:00</option>
-                                                    <option value="07:30">07:30</option>
-                                                    <option value="08:00">08:00</option>
-                                                    <option value="08:30">08:30</option>
-                                                    <option value="09:00">09:00</option>
-                                                    <option value="09:30">09:30</option>
-                                                    <option value="10:00">10:00</option>
-                                                    <option value="10:30">10:30</option>
-                                                    <option value="11:00">11:00</option>
-                                                    <option value="11:30">11:30</option>
-                                                    <option value="12:00">12:00</option>
-                                                    <option value="12:30">12:30</option>
-                                                    <option value="13:00">13:00</option>
-                                                    <option value="13:30">13:30</option>
-                                                    <option value="14:00">14:00</option>
-                                                    <option value="14:30">14:30</option>
-                                                    <option value="15:00">15:00</option>
-                                                    <option value="15:30">15:30</option>
-                                                    <option value="16:00">16:00</option>
-                                                    <option value="16:30">16:30</option>
-                                                    <option value="17:00">17:00</option>
-                                                    <option value="17:30">17:30</option>
-                                                    <option value="18:00">18:00</option>
-                                                    <option value="18:30">18:30</option>
-                                                    <option value="19:00">19:00</option>
-                                                    <option value="19:30">19:30</option>
-                                                    <option value="20:00">20:00</option>
-                                                    <option value="20:30">20:30</option>
-                                                    <option value="21:00">21:00</option>
-                                                </select>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-left" style="width: 40%">
-                                                <label class="form__label checkbox-label" for="edit-day-checkbox-6">
-                                                    <input type="checkbox" name="edit-day-checkbox"
-                                                           id="edit-day-checkbox-6">
-                                                    <span style="padding-left:0.1em">Saturday</span>
-                                                </label>
-                                            </td>
-                                            <td style="width: 60%">
-                                                <select id="edit-day-select-start-6" name="edit-day-select-start">
-                                                    <option value="06:00">06:00</option>
-                                                    <option value="06:30">06:30</option>
-                                                    <option value="07:00">07:00</option>
-                                                    <option value="07:30">07:30</option>
-                                                    <option value="08:00">08:00</option>
-                                                    <option value="08:30">08:30</option>
-                                                    <option value="09:00">09:00</option>
-                                                    <option value="09:30">09:30</option>
-                                                    <option value="10:00">10:00</option>
-                                                    <option value="10:30">10:30</option>
-                                                    <option value="11:00">11:00</option>
-                                                    <option value="11:30">11:30</option>
-                                                    <option value="12:00">12:00</option>
-                                                    <option value="12:30">12:30</option>
-                                                    <option value="13:00">13:00</option>
-                                                    <option value="13:30">13:30</option>
-                                                    <option value="14:00">14:00</option>
-                                                    <option value="14:30">14:30</option>
-                                                    <option value="15:00">15:00</option>
-                                                    <option value="15:30">15:30</option>
-                                                    <option value="16:00">16:00</option>
-                                                    <option value="16:30">16:30</option>
-                                                    <option value="17:00">17:00</option>
-                                                    <option value="17:30">17:30</option>
-                                                    <option value="18:00">18:00</option>
-                                                    <option value="18:30">18:30</option>
-                                                    <option value="19:00">19:00</option>
-                                                    <option value="19:30">19:30</option>
-                                                    <option value="20:00">20:00</option>
-                                                    <option value="20:30">20:30</option>
-                                                    <option value="21:00">21:00</option>
-                                                </select>
-                                                to
-                                                <select id="edit-day-select-end-6" name="edit-day-select-end">
-                                                    <option value="06:00">06:00</option>
-                                                    <option value="06:30">06:30</option>
-                                                    <option value="07:00">07:00</option>
-                                                    <option value="07:30">07:30</option>
-                                                    <option value="08:00">08:00</option>
-                                                    <option value="08:30">08:30</option>
-                                                    <option value="09:00">09:00</option>
-                                                    <option value="09:30">09:30</option>
-                                                    <option value="10:00">10:00</option>
-                                                    <option value="10:30">10:30</option>
-                                                    <option value="11:00">11:00</option>
-                                                    <option value="11:30">11:30</option>
-                                                    <option value="12:00">12:00</option>
-                                                    <option value="12:30">12:30</option>
-                                                    <option value="13:00">13:00</option>
-                                                    <option value="13:30">13:30</option>
-                                                    <option value="14:00">14:00</option>
-                                                    <option value="14:30">14:30</option>
-                                                    <option value="15:00">15:00</option>
-                                                    <option value="15:30">15:30</option>
-                                                    <option value="16:00">16:00</option>
-                                                    <option value="16:30">16:30</option>
-                                                    <option value="17:00">17:00</option>
-                                                    <option value="17:30">17:30</option>
-                                                    <option value="18:00">18:00</option>
-                                                    <option value="18:30">18:30</option>
-                                                    <option value="19:00">19:00</option>
-                                                    <option value="19:30">19:30</option>
-                                                    <option value="20:00">20:00</option>
-                                                    <option value="20:30">20:30</option>
-                                                    <option value="21:00">21:00</option>
-                                                </select>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-left" style="width: 40%">
-                                                <label class="form__label checkbox-label" for="edit-day-checkbox-7">
-                                                    <input type="checkbox" name="edit-day-checkbox"
-                                                           id="edit-day-checkbox-7">
-                                                    <span style="padding-left:0.1em">Sunday</span>
-                                                </label>
-                                            </td>
-                                            <td style="width: 60%">
-                                                <select id="edit-day-select-start-7" name="edit-day-select-start">
-                                                    <option value="06:00">06:00</option>
-                                                    <option value="06:30">06:30</option>
-                                                    <option value="07:00">07:00</option>
-                                                    <option value="07:30">07:30</option>
-                                                    <option value="08:00">08:00</option>
-                                                    <option value="08:30">08:30</option>
-                                                    <option value="09:00">09:00</option>
-                                                    <option value="09:30">09:30</option>
-                                                    <option value="10:00">10:00</option>
-                                                    <option value="10:30">10:30</option>
-                                                    <option value="11:00">11:00</option>
-                                                    <option value="11:30">11:30</option>
-                                                    <option value="12:00">12:00</option>
-                                                    <option value="12:30">12:30</option>
-                                                    <option value="13:00">13:00</option>
-                                                    <option value="13:30">13:30</option>
-                                                    <option value="14:00">14:00</option>
-                                                    <option value="14:30">14:30</option>
-                                                    <option value="15:00">15:00</option>
-                                                    <option value="15:30">15:30</option>
-                                                    <option value="16:00">16:00</option>
-                                                    <option value="16:30">16:30</option>
-                                                    <option value="17:00">17:00</option>
-                                                    <option value="17:30">17:30</option>
-                                                    <option value="18:00">18:00</option>
-                                                    <option value="18:30">18:30</option>
-                                                    <option value="19:00">19:00</option>
-                                                    <option value="19:30">19:30</option>
-                                                    <option value="20:00">20:00</option>
-                                                    <option value="20:30">20:30</option>
-                                                    <option value="21:00">21:00</option>
-                                                </select>
-                                                to
-                                                <select id="edit-day-select-end-7" name="edit-day-select-end">
-                                                    <option value="06:00">06:00</option>
-                                                    <option value="06:30">06:30</option>
-                                                    <option value="07:00">07:00</option>
-                                                    <option value="07:30">07:30</option>
-                                                    <option value="08:00">08:00</option>
-                                                    <option value="08:30">08:30</option>
-                                                    <option value="09:00">09:00</option>
-                                                    <option value="09:30">09:30</option>
-                                                    <option value="10:00">10:00</option>
-                                                    <option value="10:30">10:30</option>
-                                                    <option value="11:00">11:00</option>
-                                                    <option value="11:30">11:30</option>
-                                                    <option value="12:00">12:00</option>
-                                                    <option value="12:30">12:30</option>
-                                                    <option value="13:00">13:00</option>
-                                                    <option value="13:30">13:30</option>
-                                                    <option value="14:00">14:00</option>
-                                                    <option value="14:30">14:30</option>
-                                                    <option value="15:00">15:00</option>
-                                                    <option value="15:30">15:30</option>
-                                                    <option value="16:00">16:00</option>
-                                                    <option value="16:30">16:30</option>
-                                                    <option value="17:00">17:00</option>
-                                                    <option value="17:30">17:30</option>
-                                                    <option value="18:00">18:00</option>
-                                                    <option value="18:30">18:30</option>
-                                                    <option value="19:00">19:00</option>
-                                                    <option value="19:30">19:30</option>
-                                                    <option value="20:00">20:00</option>
-                                                    <option value="20:30">20:30</option>
-                                                    <option value="21:00">21:00</option>
-                                                </select>
-                                            </td>
-                                        </tr>
                                         </tbody>
                                     </table>
                                     <br/>
@@ -726,10 +441,23 @@
                             </div>
                         </div>
                         <div class="product-action d-flex flex-sm-row flex-column ">
+                            <div class="form-rom mb--20">
+                                <label class="form__label">Images <span
+                                        class="required">*</span></label>
+                                <br/>
+                                <button data-toggle="modal" data-target="#imageModal" type="button"
+                                        class="btn btn-size-sm btn-shape-square">
+                                    View
+                                </button>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="product-action d-flex flex-sm-row flex-column ">
                             <button type="button" class="btn btn-size-sm btn-shape-square"
-                                    onclick="updateSalonDetails()">
-                                Update
+                                    onclick="saveSalonDetails()">
+                                Save
                             </button>
+                            &nbsp;
                             <button type="button" class="btn btn-size-sm btn-shape-square"
                                     onclick="window.location.href='javascript:history.back()'">
                                 Cancel
@@ -741,6 +469,103 @@
             </div>
         </div>
     </div>
+
+    <!--    image modal-->
+    <div class="modal fade product-modal" id="imageModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="la la-remove"></i></span>
+                    </button>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="modal-box product-summary">
+                                <h3 class="product-title mb--20"><strong>Images to upload</strong></h3>
+                                <input type="file" id="file-input" accept="image/x-png,image/gif,image/jpeg" multiple>
+                                <div class="files">
+                                    <ul id="file-list"></ul>
+                                </div>
+
+                                <br>
+                                <div class="product-action d-flex flex-sm-row flex-column align-items-sm-center align-items-start mb--30">
+                                    <button type="button" class="btn btn-size-sm btn-shape-square" data-dismiss="modal">
+                                        Done
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--    End of image modal-->
+
+    <!--    technician modal-->
+    <div class="modal fade product-modal" id="addTechnicianModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="la la-remove"></i></span>
+                    </button>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="modal-box product-summary">
+                                <h3 class="product-title mb--20"><strong>Technicians</strong></h3>
+                                <table id="add-tech-table">
+                                </table>
+                                <br/>
+                                <p>
+                                    <button onclick="addTechRow()" class="btn btn-size-sm" id="add-tech-btn"><i class="fas fa-plus"></i>
+                                    </button>
+                                </p>
+                                <div class="product-action d-flex flex-sm-row flex-column align-items-sm-center align-items-start mb--30">
+                                    <button type="button" class="btn btn-size-sm btn-shape-square" data-dismiss="modal">
+                                        Done
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--    End of technician modal-->
+
+    <!--    menu modal-->
+    <div class="modal fade product-modal" id="addMenuModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="la la-remove"></i></span>
+                    </button>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="modal-box product-summary">
+                                <h3 class="product-title mb--20"><strong>Menu</strong></h3>
+                                <table id="add-menu-table">
+                                </table>
+                                <p>
+                                    <button class="btn btn-size-sm" onclick="addMenuRow()" id="add-menu-btn"><i
+                                            class="fas fa-plus"></i></button>
+                                </p>
+                                <div class="product-action d-flex flex-sm-row flex-column align-items-sm-center align-items-start mb--30">
+                                    <button type="button" class="btn btn-size-sm btn-shape-square" data-dismiss="modal">
+                                        Done
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--    End of menu modal-->
     <!-- Main Content Wrapper Start -->
 
     <!-- OffCanvas Menu Start -->
@@ -781,7 +606,7 @@
 
 <!-- Main JS -->
 <script src="../../assets/js/main.js"></script>
-<script src="salon-admin.js"></script>
+<script src="add-salon.js"></script>
 
 
 </body>

@@ -27,7 +27,7 @@ function loadSalonAppointments() {
         appDate: searchDate,
         technicianId: techId
     };
-    $.get("http://thebeautibar.com/assets/php/fetch-appointments-for-salon.php", data, function (data) {
+    $.get("../../assets/php/fetch-appointments-for-salon.php", data, function (data) {
         console.log("details response" + data);
         if (data == "No results") {
             loadUnavailableAppointments();
@@ -63,7 +63,7 @@ function loadUnavailableAppointments() {
         appDate: searchDate,
         technicianId: techId
     };
-    $.get("http://thebeautibar.com/assets/php/fetch-unavailable-slots.php", data, function (data) {
+    $.get("../../assets/php/fetch-unavailable-slots.php", data, function (data) {
         if (data == "No results") {
             $('.ft-preloader').removeClass("active");
             return;
@@ -94,7 +94,7 @@ $("#date-selector-2").change(function () {
 
 function loadOpeningTimes() {
     var data = {salonId: techSalonId};
-    $.get("http://thebeautibar.com/assets/php/fetch-salon-details.php", data, function (data, status) {
+    $.get("../../assets/php/fetch-salon-details.php", data, function (data, status) {
         var salonData = JSON.parse(data);
         var salonStartTime = salonData[0].startTime;
         var salonEndTime = salonData[0].endTime;

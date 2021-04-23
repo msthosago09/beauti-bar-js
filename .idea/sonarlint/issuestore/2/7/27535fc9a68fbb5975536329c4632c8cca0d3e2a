@@ -1,33 +1,33 @@
 
-[javascript:S1481":Remove the declaration of the unused '$document' variable.(·ˆ£¤ÿÿÿÿÿ
-\javascript:S1481Õ"?Remove the declaration of the unused 'imageSrcLength' variable.(½İéÎ
-cjavascript:S1854"BRemove this useless assignment to variable "$fixedHeaderPosition".(’Å¢‡şÿÿÿÿ
-xjavascript:S3923ê"[Remove this conditional structure or edit its code blocks so that they're not all the same.(‘‚ã
-Xjavascript:S1854"7Remove this useless assignment to variable "$document".(·ˆ£¤ÿÿÿÿÿ
-ajavascript:S1481½"?Remove the declaration of the unused 'slickInstances' variable.(Ö–„úÿÿÿÿ
-^javascript:S1481ë"ARemove the declaration of the unused '$verticalSwiping' variable.(¸÷ˆŞ
-<javascript:S2814´" 'prevTarget' is already defined.(Ü†8
-Ujavascript:S1854ø"3Remove this useless assignment to variable "$rows".(ÔĞ´¯ûÿÿÿÿ
-djavascript:S1481"CRemove the declaration of the unused '$fixedHeaderHeight' variable.(±«•¹ÿÿÿÿÿ
-[javascript:S1481×"?Remove the declaration of the unused 'indexNumbArray' variable.(Ëü±
-Rjavascript:S1854"6Remove this useless assignment to variable "$pageUrl".(õ«ì¢
-Mjavascript:S1854"2Remove this useless assignment to variable "$dom".(ìÛ’
-Yjavascript:S1481!"8Remove the declaration of the unused '$footer' variable.(Øû½àøÿÿÿÿ
-Vjavascript:S1854!"5Remove this useless assignment to variable "$footer".(Øû½àøÿÿÿÿ
-Ujavascript:S1854³"8Remove this useless assignment to variable "prevTarget".(¯¸ö’
-`javascript:S1854ß">Remove this useless assignment to variable "$spaceBetween_xl".(ªÙğšûÿÿÿÿ
-cjavascript:S1481ß"ARemove the declaration of the unused '$spaceBetween_xl' variable.(ªÙğšûÿÿÿÿ
-[javascript:S1854ë">Remove this useless assignment to variable "$verticalSwiping".(¸÷ˆŞ
-fjavascript:S1481"ERemove the declaration of the unused '$fixedHeaderPosition' variable.(’Å¢‡şÿÿÿÿ
-\javascript:S1481à":Remove the declaration of the unused '$rowSpace' variable.(áÈ…şÿÿÿÿ
->javascript:S2814¯"'newVal' is already defined.(¹°¡øÿÿÿÿ
-Vjavascript:S1854"5Remove this useless assignment to variable "$window".(×ãÑÕùÿÿÿÿ
-Yjavascript:S1854à"7Remove this useless assignment to variable "$rowSpace".(áÈ…şÿÿÿÿ
-Mjavascript:S1117"+'i' is already declared in the upper scope.(í¡Ñêüÿÿÿÿ
-Yjavascript:S1854Õ"<Remove this useless assignment to variable "imageSrcLength".(½İéÎ
-ajavascript:S1854"@Remove this useless assignment to variable "$fixedHeaderHeight".(±«•¹ÿÿÿÿÿ
-Yjavascript:S1481"8Remove the declaration of the unused '$window' variable.(×ãÑÕùÿÿÿÿ
-Mjavascript:S1117Å"+'i' is already declared in the upper scope.(óáÿ‘ûÿÿÿÿ
-Xjavascript:S1481ø"6Remove the declaration of the unused '$rows' variable.(ÔĞ´¯ûÿÿÿÿ
-Pjavascript:S1481"5Remove the declaration of the unused '$dom' variable.(ìÛ’
-Ujavascript:S1481"9Remove the declaration of the unused '$pageUrl' variable.(õ«ì¢
+Njavascript:S1481"5Remove the declaration of the unused '$dom' variable.(ìÛ’
+Rjavascript:S1854"3Remove this useless assignment to variable "$rows".(ÔĞ´¯ûÿÿÿÿ
+Wjavascript:S1481"8Remove the declaration of the unused '$window' variable.(×ãÑÕùÿÿÿÿ
+Kjavascript:S1854"2Remove this useless assignment to variable "$dom".(ìÛ’
+djavascript:S1481"ERemove the declaration of the unused '$fixedHeaderPosition' variable.(’Å¢‡şÿÿÿÿ
+Xjavascript:S1481"?Remove the declaration of the unused 'indexNumbArray' variable.(Ëü±
+Yjavascript:S1481":Remove the declaration of the unused '$document' variable.(·ˆ£¤ÿÿÿÿÿ
+Rjavascript:S1854"8Remove this useless assignment to variable "prevTarget".(¯¸ö’
+Ujavascript:S1481"6Remove the declaration of the unused '$rows' variable.(ÔĞ´¯ûÿÿÿÿ
+9javascript:S2814" 'prevTarget' is already defined.(Ü†8
+Vjavascript:S1854"7Remove this useless assignment to variable "$rowSpace".(áÈ…şÿÿÿÿ
+ajavascript:S1854"BRemove this useless assignment to variable "$fixedHeaderPosition".(’Å¢‡şÿÿÿÿ
+Sjavascript:S1481"9Remove the declaration of the unused '$pageUrl' variable.(õ«ì¢
+ujavascript:S3923"[Remove this conditional structure or edit its code blocks so that they're not all the same.(‘‚ã
+Tjavascript:S1854"5Remove this useless assignment to variable "$window".(×ãÑÕùÿÿÿÿ
+;javascript:S2814"'newVal' is already defined.(¹°¡øÿÿÿÿ
+`javascript:S1481"ARemove the declaration of the unused '$spaceBetween_xl' variable.(ªÙğšûÿÿÿÿ
+[javascript:S1481"ARemove the declaration of the unused '$verticalSwiping' variable.(¸÷ˆŞ
+Yjavascript:S1481"?Remove the declaration of the unused 'imageSrcLength' variable.(½İéÎ
+Vjavascript:S1854"7Remove this useless assignment to variable "$document".(·ˆ£¤ÿÿÿÿÿ
+Vjavascript:S1854"<Remove this useless assignment to variable "imageSrcLength".(½İéÎ
+]javascript:S1854">Remove this useless assignment to variable "$spaceBetween_xl".(ªÙğšûÿÿÿÿ
+Tjavascript:S1854"5Remove this useless assignment to variable "$footer".(Øû½àøÿÿÿÿ
+Jjavascript:S1117"+'i' is already declared in the upper scope.(óáÿ‘ûÿÿÿÿ
+Xjavascript:S1854">Remove this useless assignment to variable "$verticalSwiping".(¸÷ˆŞ
+bjavascript:S1481"CRemove the declaration of the unused '$fixedHeaderHeight' variable.(±«•¹ÿÿÿÿÿ
+Yjavascript:S1481":Remove the declaration of the unused '$rowSpace' variable.(áÈ…şÿÿÿÿ
+_javascript:S1854"@Remove this useless assignment to variable "$fixedHeaderHeight".(±«•¹ÿÿÿÿÿ
+^javascript:S1481"?Remove the declaration of the unused 'slickInstances' variable.(Ö–„úÿÿÿÿ
+Jjavascript:S1117"+'i' is already declared in the upper scope.(í¡Ñêüÿÿÿÿ
+Wjavascript:S1481"8Remove the declaration of the unused '$footer' variable.(Øû½àøÿÿÿÿ
+Pjavascript:S1854"6Remove this useless assignment to variable "$pageUrl".(õ«ì¢

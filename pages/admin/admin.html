@@ -22,7 +22,6 @@
 
     <!-- style css -->
     <link rel="stylesheet" href="../../assets/css/main.css">
-    <link rel="stylesheet" href="admin.css">
 </head>
 
 <body>
@@ -141,11 +140,12 @@
                         <div class="user-dashboard-tab flex-column flex-md-row">
                             <div class="user-dashboard-tab__head nav flex-md-column" role="tablist"
                                  aria-orientation="vertical">
-                                <a class="nav-link active" data-toggle="pill" role="tab" href="#orders"
+                                <a class="nav-link nav-link2 active" data-toggle="pill" role="tab" href="#orders"
                                    aria-controls="orders" aria-selected="true">Orders</a>
-                                <a class="nav-link" data-toggle="pill" role="tab" href="#technicians-tab"
-                                   aria-controls="technicians-tab" aria-selected="true">Technicians</a>
-                                <a class="nav-link" data-toggle="pill" role="tab" href="#salons" aria-controls="salons"
+                                <a class="nav-link nav-link2" data-toggle="pill" role="tab" href="#technicians-tab"
+                                   aria-controls="technicians-tab" aria-selected="true">Schedules</a>
+                                <a class="nav-link nav-link2" data-toggle="pill" role="tab" href="#salons"
+                                   aria-controls="salons"
                                    aria-selected="true">Salons</a>
                             </div>
                             <div class="user-dashboard-tab__content tab-content">
@@ -163,7 +163,8 @@
                                             <p id="no-salons-text">No salons</p>
                                             </tbody>
                                             <tbody>
-                                            <p><a href="../add-salon/add-salon.html" class="btn btn-size-sm" id="add-salon-btn"><i class="fas fa-plus"></i></a></p>
+                                            <p><a href="../add-salon/add-salon.html" class="btn btn-size-sm"
+                                                  id="add-salon-btn"><i class="fas fa-plus"></i></a></p>
                                             </tbody>
                                         </table>
                                     </div>
@@ -195,7 +196,6 @@
                                             <tr>
                                                 <th></th>
                                                 <th></th>
-                                                <th></th>
                                             </tr>
                                             </thead>
                                             <tbody id="technicians-admin-list">
@@ -212,6 +212,41 @@
         </div>
     </div>
     <!-- Main Content Wrapper Start -->
+
+    <!--    Delete modal-->
+    <div class="modal fade product-modal" id="deleteModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="la la-remove"></i></span>
+                    </button>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="modal-box product-summary">
+                                <h3 class="product-title mb--20"><strong>Confirm delete</strong></h3>
+                                <p class="product-short-description mb--25">
+                                    Are you sure you want to delete? All data for this salon will be lost
+                                </p>
+                                <div class="product-action d-flex flex-sm-row flex-column align-items-sm-center align-items-start mb--30">
+                                    <button type="button" onclick="deleteSalon()"
+                                            class="btn btn-size-sm btn-shape-square">
+                                        Yes
+                                    </button>
+                                    &nbsp; &nbsp;
+                                    <button type="button" data-dismiss="modal" class="btn btn-size-sm btn-shape-square">
+                                        No
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--    End of delete modal-->
+
 
     <!-- OffCanvas Menu Start -->
     <div class="offcanvas-menu-wrapper" id="offcanvasMenu">

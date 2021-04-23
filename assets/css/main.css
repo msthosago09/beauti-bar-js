@@ -209,16 +209,16 @@ a, button {
   cursor: pointer; }
 
 a:hover {
-  color: #ff5151;
+  color: lightpink;
   text-decoration: none; }
 
-input[type=number]::-webkit-inner-spin-button,
+/*input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0; }
 
 input[type=number] {
-  -moz-appearance: textfield; }
+  -moz-appearance: textfield; }*/
 
 a, a:hover, a:focus, a:active, button, button:focus, input, select, textarea, .slick-slide {
   outline: none; }
@@ -958,7 +958,7 @@ a, button, .item-overlay, .global-overlay, .pagination li .page-number, .scroll-
   .ft-preloader .ft-child {
     width: 20px;
     height: 20px;
-    background-color: #e83e8c;
+    background-color: lightpink;
     border-radius: 100%;
     display: inline-block;
     -webkit-animation: ft-bouncedelay 1.4s ease-in-out 0s infinite both;
@@ -1430,7 +1430,7 @@ a, button, .item-overlay, .global-overlay, .pagination li .page-number, .scroll-
         margin-bottom: 6px;
         transition: 0.4s; }
         .bl-widget.post .inner .post-list li a:hover {
-          color: #ff5151; }
+          color: lightpink; }
       .bl-widget.post .inner .post-list li span {
         color: #bab9be; }
         .bl-widget.post .inner .post-list li span i {
@@ -2450,11 +2450,11 @@ a, button, .item-overlay, .global-overlay, .pagination li .page-number, .scroll-
     -ms-transition: width 0.6s cubic-bezier(0.25, 0.8, 0.25, 1) 0s;
     -o-transition: width 0.6s cubic-bezier(0.25, 0.8, 0.25, 1) 0s;
     transition: width 0.6s cubic-bezier(0.25, 0.8, 0.25, 1) 0s;
-    background-color: #ff5151; } }
+    background-color: lightpink; } }
 
 @media (min-width: 62em) {
   .main-navigation .mainmenu__item.menu-item-has-children > ul li a:hover {
-    color: #ff5151; } }
+    color: lightpink; } }
 
 @media (min-width: 62em) {
   .main-navigation .mainmenu__item.menu-item-has-children > ul li a:hover:not(.megamenu-title) .mm-text:after {
@@ -3757,11 +3757,18 @@ a, button, .item-overlay, .global-overlay, .pagination li .page-number, .scroll-
 .pagination li .page-number, .tooltip-inner, .scroll-to-top, .scroll-to-top i, .page-title, .breadcrumb li a, .breadcrumb li span, .breadcrumb li:not(:last-child):after, .newsletter-form__btn, .searchform--2 .searchform__submit, .product-badge, .tab-style-2 .nav-link.active, .user-dashboard-tab__head .nav-link.active, .user-dashboard-tab__head .nav-link:hover, .widget-color a {
   color: #ffffff; }
 
+.tab-style-2 .nav-link2.active, .user-dashboard-tab__head .nav-link2.active, .user-dashboard-tab__head .nav-link2:hover {
+  color: black !important;
+}
 .action-btn, .mini-cart, .offcanvas-menu-wrapper .offcanvas-menu-inner, .product-summary .product-navigation a, .variation-form .product-color-variations .product-color-variation-btn:after {
   background-color: #ffffff; }
 
 .pagination li .page-number.current, .pagination li .page-number:hover, .message-box a, .error h1, .btn-close:hover, .comment-author a:hover, .comment-reply-link, .cart-form__btn:hover, .mini-cart__product-remove:hover, .mini-cart__product-title:hover, .custom-close:hover i, .product-price-wrapper .money, .ft-product .product-inner .add-to-cart, .product-summary .product-navigation a:hover, .product-summary .product-title a:hover, .variation-form .product-size-variations .product-size-variation-btn:hover, .variation-form .product-size-variations .product-size-variation-btn.selected, .table tbody td.product-remove a, .table.compare-table tbody .remove a, .table.shop_attributes th a:hover, .table.shop_attributes td a:hover {
   color: #ff5151; }
+
+.user-dashboard-tab__head .nav-link2.active, .user-dashboard-tab__head .nav-link2:hover {
+  background-color: lightpink !important;
+}
 
 .heading__secondary:after, .pagination li .page-number, .pagination li .dot, .blog__info:before, .slick-dots li, .newsletter-form__btn, .searchform--2 .searchform__submit, .product-badge, .user-dashboard-tab__head .nav-link.active, .user-dashboard-tab__head .nav-link:hover {
   background-color: #ff5151; }
@@ -4116,16 +4123,6 @@ a, button, .item-overlay, .global-overlay, .pagination li .page-number, .scroll-
   .mb-sm--7pt6 {
     margin-bottom: 7.6rem; } }
 
-.fa-plus {
-  color: black;
-  border-color: lightpink;
-  cursor: pointer;
-}
-/*.fa-plus:hover {
-  color: lightpink !important;
-  border-color: lightpink;
-  cursor: pointer;
-}*/
 
 .fa-check, .fa-check:hover {
   color: #1e7e34;

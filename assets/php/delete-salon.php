@@ -10,7 +10,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$salonId = $_GET["salonId"];
+$salonId = $_POST["salonId"];
 
 $sql = "DELETE FROM salons WHERE id = '$salonId'";
 $conn->query($sql);
