@@ -135,3 +135,5 @@ L
 pages/add-salon/add-salon.js,e\d\ed9b74d52d5e249001646d432f6b39ffda48db54
 N
 pages/add-salon/add-salon.html,a\2\a2667371442e50c10a3ff72e2ea2d3729608a362
+J
+assets/php/save-images.php,4\0\406fd196cd9eef061bd2e6412931d92eec6f02ac

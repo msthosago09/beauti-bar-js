@@ -17,9 +17,11 @@ function makeId() {
     return result;
 }
 
+var savedSalonId;
+
 function saveSalonDetails() {
     $('.ft-preloader').addClass("active");
-    var salonId = makeId();
+    savedSalonId = makeId();
     var salonName = document.getElementById("salonName_field").value;
     var salonPhone = document.getElementById("salonPhone_field").value;
     var salonEmail = document.getElementById("salonEmail_field").value;
@@ -35,7 +37,7 @@ function saveSalonDetails() {
     var orderNotes = document.getElementById("orderNotes").value;
 
     var salonDetails = {
-        salonId: salonId,
+        salonId: savedSalonId,
         salonName: salonName,
         salonPhone: salonPhone,
         salonEmail: salonEmail,
@@ -84,23 +86,44 @@ function saveSalonDetails() {
     salonDetails.menuItems = menuDetails;
     salonDetails.technicians = technicianDetails;
     console.log(salonDetails);
+
     $.post("http://thebeautibar.com/assets/php/add-salon.php", salonDetails, function (data, status) {
+        uploadImages(savedSalonId);
+    });
+}
+
+var photoList = [];
+
+function uploadImages(salId) {
+    if (photoList.length <= 0) {
+        return;
+    }
+
+    var formData = new FormData();
+    for (var i = 0; i < photoList.length; i++) {
+        formData.append('photos[]', photoList[i], photoList[i].name);
+        formData.append('salonId', salId);
+    }
+
+    console.log("form data");
+    var request = $.ajax({
+        url: "http://thebeautibar.com/assets/php/save-images.php",
+        type: 'post',
+        processData: false,
+        contentType: false,
+        data: formData
+    });
+
+    request.done(function (response) {
+        console.log("uploading done");
         window.location.href = '../admin/admin.html';
     });
 }
 
 // event handlers
-var totalFileArray = [];
 $("#file-input").change(function (e) {
-    var files = Array.from(document.getElementById("file-input").files);
-    for (var x = 0; x < files.length; x++) {
-        if (!totalFileArray.includes(files[x])) {
-            totalFileArray.push(files[x]);
-            console.log(files[x]);
-            var fileHTMLElement = document.getElementById("file-list");
-            fileHTMLElement.innerHTML += '<li>' + files[x].name + '</li>';
-        }
-    }
+    photoList.push(document.getElementById("file-input").files[0]);
+    console.log("File name: " + document.getElementById("file-input").files[0].name);
 });
 
 function removeMenuRow(rowName) {
